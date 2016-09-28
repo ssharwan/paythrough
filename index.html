@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Pay Through Indifi</title>
+		<link rel="stylesheet" type="text/css" href="css/pay-through-indifi.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="config/environments/default.js"></script>
+		<script src="js/pay-through-indifi.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<section class="error-section" style="color:red"> 
+			</section>
+			<section  class="capture-payment-amount" style="display:none">
+				<div >
+		            <div> amount</div> 
+		            <div><input type="text" class="payment-amount-input"></div>
+		         </div> 
+		         <div> 
+		            <button class="capture-payment-amount-section-button" >Next</button>
+		         </div> 
+			</section>
+			<section class="capture-payment-otp" style="display:none">
+				<div >
+		            <div> OTP</div> 
+		            <div><input type="text" class="payment-otp-input"></div>
+		         </div> 
+		         <div> 
+		            <button class="capture-payment-otp-section-button" >Next</button>
+		         </div> 
+			</section>
+			<section class="capture-payment-success" style="display:none">
+				Payment transaction has been successfully initiated.
+			</section>
+			<section class=""></section>
+		</div>
+	</body>
+</html>
