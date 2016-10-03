@@ -836,7 +836,13 @@ i {
     left:0;
 }
 .error-section{
-    color: red;
+    color: #ff0000;
     text-align: center;
     font-size: 12px;
+}
+.success-message-section{
+    color: #31ba74;
+    text-align: center;
+    font-size: 12px;
+
 }
