@@ -110,8 +110,20 @@
 			}
 		})
   	}
+  	function validateAmount(amount) {
+	    var re = /^(0|[1-9][0-9]*)$/;
+	    return re.test(amount);
+	}
   	function capturePayment(){
 		var amount = jQuery('.payment-amount-input').val();
+		jQuery('.payment-amount-input-error').html("");
+		if(!amount.trim()){
+			jQuery('.payment-amount-input-error').html("Enter amount");
+			return;
+		} else if(!validateAmount(amount.trim())){
+			jQuery('.payment-amount-input-error').html("Invalid amount");
+			return;
+		}
 		var agent_id = getParameterByName('agent_id');
 		var anchor_id = getParameterByName('anchor_id');
 		jQuery.ajax({
