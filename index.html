@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta name="viewport" content="wclassth=device-wclassth, initial-scale=1.0"> 
 		<title>Pay Through Indifi</title>
 		<link rel="stylesheet" type="text/css" href="css/pay-through-indifi.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -11,7 +11,7 @@
 		<script src="js/pay-through-indifi.js"></script>
 	</head>
 	<body>
-		<div class="container">
+		<!-- <div class="container">
 			<section class="header"> 
 				Pay through Indifi
 			</section>
@@ -19,7 +19,7 @@
 			</section>
 			<section  class="capture-payment-amount" style="display:none">
 				<div>Borrower Name:      ABC Travels</div>
-				<div>Agent Id:      	X12232SDF</div>
+				<div>Agent ID:      	X12232SDF</div>
 				<div>Total Credit Line:      	1000000</div>
 				<div>Remaining Credit:      	10000</div>
 				<div >
@@ -43,6 +43,61 @@
 				Payment transaction has been successfully initiated.
 			</section>
 			<section class=""></section>
+		</div> -->
+		<div class="mfix animations drishy font-loaded container" tabindex="0">
+		   <div class="backdrop"></div>
+		   <div class="mchild modal">
+		      <div class="modal-inner">
+		         <div class="content">
+		            <div class="header">
+		               <div class="modal-close close">×</div>
+		               <div class="logo"> <img src="https://s3-ap-southeast-1.amazonaws.com/static-indifi/images/logo.png"> </div>
+		               <div class="merchant">
+		                  <div class="merchant-name">ABC Travels</div>
+		                  <div class="merchant-desc">Agent class: X12232SDF</div>
+		                  <div class="amount"><span class="merchant-desc">Total Credit Line</span><br><span>&#8377;</span> 1000000</div>
+		               </div>
+		            </div>
+		            <div class="body">
+		               <form class="form" method="POST" autocomplete="off" onsubmit="return false">
+		                  <div class="form-fields">
+		                     <div class="form-commonshowable screen drishy">
+		                     	<div style="text-align: center;background: #6996F8;border-radius: 3px;margin:10px auto;color:#fff;padding: 8px;width:60%;font-size: 16px;">Remaining Credit: 10000</div>
+		                        
+		                        <!-- Amount Section -->
+		                        <div class="pad capture-payment-amount" style="margin-top: 40px; display: none;">
+		                           <div class="elem-wrap">
+		                              <div class="elem elem-contact filled">
+		                                 <i>&#8377;</i> 
+		                                 <div class="help">Please enter a valclass contact number</div>
+		                                 <label>Amount To Be Paclass</label> <input type="text" class="payment-amount-input input"> 
+		                              </div>
+		                           </div>
+		                        </div>
+		                        <!-- OTP Section -->
+		                        <div class="pad capture-payment-otp" style="margin-top: 40px;">
+		                           <div class="elem-wrap">
+		                              <div class="elem elem-contact filled">
+		                                 <i style="font-size: 11px;">OTP</i> 
+		                                 <div class="help">Please enter a valid OTP number</div>
+		                                 <label>Enter OTP</label> <input type="text" class="payment-amount-input input"> 
+		                              </div>
+		                              <div style="text-align: center;margin-top: 10px;"><a href="">Resend OTP Again</a></div>
+		                           </div>
+		                        </div>
+		                     </div>
+		                     <div class="" style="position: absolute;bottom: 0;width: 100%;">
+	                           <div class="grid clear payment-options">
+	                              <div class="payment-option item capture-payment-otp-section-button" tab="card"><label>Next</label></div>
+	                           </div>
+	                           <div class="clear"></div>
+	                        </div>
+		                  </div>
+		               </form>
+		            </div>
+		         </div>
+		      </div>
+		   </div>
 		</div>
 	</body>
 </html>
