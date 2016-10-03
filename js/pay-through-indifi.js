@@ -40,9 +40,19 @@
   			resendOTP();
   		})
   		jQuery('.pay-through-indifi-close').on('click', function(){
-  			window.parent.postMessage( {'close_widget': true}, '*' );
+  			exit();
   		})
   		
+  	}
+  	function exit(){
+  		window.parent.postMessage( {'close_widget': true}, '*' );
+  		var redirect_url = getParameterByName('redirect_url');
+  		if(redirect_url){
+  			window.location.assign(redirect_url);
+  		} else {
+	  		window.close();
+	  	}
+
   	}
   	function showStep(step, msg){
 
@@ -161,7 +171,11 @@
 			}),
 			success: function(result) {
 				if(result.success) {
-					debugger;
+					var redirect_url = getParameterByName('redirect_url');
+  					if(redirect_url){
+  						window.location.assign(redirect_url);
+  						return;
+  					}
 					var org_credit_left = numeral(credit_line.credit_left).value();
 					credit_line.credit_left = org_credit_left - numeral(result.data[0].amount).value();
 					jQuery('.remaining-credit').html(numeral(credit_line.credit_left).format('0,0.00'));
