@@ -19,29 +19,38 @@
                     <div class="content">
                         <div class="header">
                             <div class="modal-close close pay-through-indifi-close">×</div>
+                            <div align="center" class="brandName">PAY THROUGH</div>
                             <div class="logo"> <img src="https://s3-ap-southeast-1.amazonaws.com/static-indifi/images/logo.png"> </div>
-                            <div class="merchant">
-                                <div class="merchant-name"></div>
-                                <div>
-                                	<div class="merchant-desc">Total Credit Limit</div>
-                                	<div class="amount">
-	                                	<span>&#8377;</span> 
-	                                	<span class="total-credit"></span>
-                                	</div>
-                                </div>
-                            </div>
                         </div>
+
                         <div class="body">
                             <div class="form">
                                 <div class="form-fields">
                                     <div class="form-commonshowable screen nasty">
-                                        <div class="limitAvailable">Available Limit: &#8377; <span class="remaining-credit"></span></div>
+                                        <div class="limitAvailable">
+                                            <div class="item">
+                                                <div class="details">Merchant Name:</div> 
+                                                <div class="merchant-name value"></div>
+                                            </div>
+                                            <div class="item">
+                                                <span class="details">Total Limit:</span> 
+                                                <span class="value">&#8377; 
+                                                    <span class="total-credit"></span>
+                                                </span>
+                                            </div>
+                                            <div class="item">
+                                                <span class="details">Available Limit:</span> 
+                                                <span class="value">&#8377; 
+                                                    <span class="remaining-credit"></span>
+                                                </span>
+                                            </div>
+                                        </div>
 
                                         <section class="error-section" style="color:red"> </section>
                                         <section class="success-message-section" style="color:green"> </section>
 
                                         <!-- Amount Section -->
-                                        <div class="pad capture-payment-amount" style="margin-top: 40px; display: none;">
+                                        <div class="pad capture-payment-amount" style="margin-top: 20px; display: none;">
                                             <div class="elem-wrap">
                                                 <div class="elem elem-contact filled">
                                                     <i>&#8377;</i> 
@@ -77,6 +86,11 @@
                                         <div class="pad capture-payment-success" style="margin-top: 40px; display: none;">
                                             
                                         </div>
+                                    </div>
+                                    
+                                    <!-- Apply Loan -->
+                                    <div>
+                                        
                                     </div>
                                 </div>
                             </div>

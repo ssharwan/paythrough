@@ -320,7 +320,6 @@ input[type=radio]:checked+label .item-inner {
     font-weight: 700;
     text-transform: uppercase
 }
-.logo,
 .back,
 .grid .item {
     float: left
@@ -569,11 +568,11 @@ i {
 .header {
     border-radius: 3px 3px 0 0;
     color: #fff;
-    padding: 24px;
+    padding: 10px;
     overflow: hidden;
     max-height: 128px;
     z-index: 3;
-    background: #313F4B;
+    background: #48b2ff;
 }
 .header::before {
     left: 0;
@@ -585,8 +584,8 @@ i {
     background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .2), rgba(0, 0, 0, .2))
 }
 .close {
-    right: 0;
-    top: 0;
+    right: 4px;
+    top: 10px;
     cursor: pointer;
     font-size: 18px;
     opacity: .6;
@@ -603,14 +602,12 @@ i {
     opacity: 1
 }
 .logo {
-    padding: 8px;
+    padding: 4px 8px;
     width: 64px;
-    height: 64px;
     border-radius: 3px;
-    line-height: 62px;
-    margin-right: 24px;
+    margin: auto;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .1)
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
 }
 .logo img {
     vertical-align: middle;
@@ -743,16 +740,15 @@ i {
     width: 25%
 }
 .payment-options label {
-    padding-top: 20px;
-    height: 56px;
-    background: #22C4AC;
+    padding-top: 16px;
+    height: 46px;
+    background: #46B1FF;
     color: #fff;
 }
 .payment-options label:hover{
-    color: #757575;
     -webkit-transition: .2s;
     transition: .2s;
-    background: #eee;
+    background: #34DEC0;
 }
 .payment-options i {
     display: block;
@@ -820,12 +816,26 @@ i {
 }
 
 .limitAvailable{
-    text-align: center;
-    border: 2px solid #6996F8;
-    border-radius: 3px;
-    margin:10px auto;padding: 8px;
-    width:60%;
-    font-size: 16px;    
+    border: 1px solid #65e6cf;
+    border-radius: 2px;
+    margin: 10px auto;
+    width: 90%;
+    font-size: 14px;
+    background: #e4fffa;   
+}
+.limitAvailable .item{
+    padding: 8px;
+    border-top: 1px solid #65e6cf;
+}
+.limitAvailable .item:first-child{
+    border-top: 0;
+}
+.limitAvailable .item .value{
+    color: #07b0a4;
+}
+.limitAvailable .item .details{
+    width: 115px;
+    float: left;
 }
 .resendOTP{
     text-align: center;
@@ -853,4 +863,8 @@ i {
     color: #31ba74;
     text-align: center;
     font-size: 15px;
+}
+.brandName{
+    font-size: 16px;
+    padding: 0px 4px 8px 4px;
 }
