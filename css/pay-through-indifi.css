@@ -389,7 +389,7 @@ html {
     padding: 0 24px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .wallets .help {
     left: 12px
@@ -524,7 +524,7 @@ i {
 .font-loaded button,
 .font-loaded input,
 .font-loaded select {
-    font-family: lato, ubuntu, helvetica, sans-serif;
+    font-family: helvetica, sans-serif;
     -webkit-font-feature-settings: "liga" 0;
     font-feature-settings: "liga" 0
 }
@@ -563,7 +563,7 @@ i {
     color: #333;
     font-size: 14px;
     width: 344px;
-    font-family: ubuntu, helvetica, sans-serif
+    font-family: helvetica, sans-serif
 }
 .header {
     border-radius: 3px 3px 0 0;
@@ -742,10 +742,13 @@ i {
     width: 25%
 }
 .payment-options label {
-    padding-top: 16px;
+    padding-top: 8px;
     height: 46px;
     background: #46B1FF;
     color: #fff;
+}
+.payment-options label .buttonText{
+    padding-top: 8px;
 }
 .payment-options label:hover{
     -webkit-transition: .2s;
@@ -821,7 +824,7 @@ i {
     border: 1px solid #65e6cf;
     border-radius: 2px;
     margin: 10px auto;
-    width: 90%;
+    width: 99%;
     font-size: 14px;
     background: #e4fffa;   
 }
@@ -836,7 +839,7 @@ i {
     color: #07b0a4;
 }
 .limitAvailable .item .details{
-    width: 115px;
+    width: 136px;
     float: left;
 }
 .resendOTP{
@@ -853,25 +856,56 @@ i {
     color: #ff0000;
     text-align: center;
     font-size: 12px;
+    text-transform: capitalize;
 }
-.success-message-section{
-    color: #31ba74;
-    text-align: center;
-    font-size: 12px;
-
-}
-.capture-payment-success .success-message{
+.success-message{
     background: #31ba74;
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
     color: #fff;
     width: 68%;
-    margin: 40px auto 0;
+    margin: 30px auto 0;
     padding: 10px;
     border-radius: 3px;
     line-height: 22px;
+    text-transform: capitalize;
+}
+.error-section{
+    background: rgba(255, 0, 0, 0.69);
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    width: 68%;
+    margin: 30px auto 0;
+    padding: 10px;
+    border-radius: 3px;
+    line-height: 22px;
+    text-transform: capitalize;
 }
 .brandName{
     font-size: 16px;
     padding: 0px 4px 8px 4px;
+}
+.resend-otp-button{
+    width:100%;
+}
+.primaryButton .spin div {
+    border: 4px solid #e4fffa;
+}
+.apply-loan h3{
+    color: #ff8c46;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.apply-loan h2{
+    color: #46b1ff;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0;
+}
+.apply-loan h4{
+    color: #46b1ff;
+    font-weight: 300;
+    margin: 0 0 25px 0;
 }

@@ -27,15 +27,12 @@
                             <div class="form">
                                 <div class="form-fields">
                                     
-                                    <section class="error-section errorMsg"></section>
-                                    <section class="success-message-section"> </section>
+                                    <section class="error-section errorMsg" style="display: none;"></section>
+                                    <section class="success-message-section success-message" style="display: none;"> </section>
 
                                     <!-- Payment Flow -->
                                     <div id="payment_flow" class="form-commonshowable screen nasty" style="display: none">
                                         <div class="merchant-name"></div>
-                                        
-
-                                        
                                         <!-- Amount Section -->
                                         <div class="pad capture-payment-amount" style="display: none;">
                                             <div class="limitAvailable">
@@ -60,17 +57,13 @@
                                                 <div class="payment-amount-input-error errorMsg"></div>
                                             </div>
                                             <button class="capture-payment-amount-section-button"> 
-                                                <div class="primaryButton">
-                                                    <div class="grid clear payment-options">
-                                                        <div class="payment-option item" tab="card">
-                                                            <label>
-                                                                Next 
-                                                                <div class="spin" style="display: none;">
-                                                                    <div></div>
-                                                                </div>
-                                                            </label>
+                                                <div class="primaryButton payment-option payment-options item grid clear">
+                                                    <label>
+                                                        <div class="buttonText">Next</div>  
+                                                        <div class="spin" style="display: none;">
+                                                            <div></div>
                                                         </div>
-                                                    </div>
+                                                    </label>
                                                     <div class="clear"></div>
                                                 </div>
                                             </button>
@@ -102,23 +95,19 @@
                                                 </button>
                                             </div>
                                             <button class="capture-payment-otp-section-button"> 
-                                                <div class="primaryButton">
-                                                    <div class="grid clear payment-options">
-                                                        <div class="payment-option item" tab="card">
-                                                            <label>
-                                                                Next 
-                                                                <div class="spin" style="display: none;">
-                                                                    <div></div>
-                                                                </div>
-                                                            </label>
+                                                <div class="primaryButton primaryButton payment-option payment-options item grid clear">
+                                                    <label>
+                                                        <div class="buttonText">Next</div> 
+                                                        <div class="spin" style="display: none;">
+                                                            <div></div>
                                                         </div>
-                                                    </div>
+                                                    </label>
                                                     <div class="clear"></div>
                                                 </div>
                                             </button>
                                         </div>
                                         <!-- Sucess Section -->
-                                        <div class="capture-payment-success" style="display: none;">
+                                        <div class="capture-payment-success success-message" style="display: none;">
                                             <div class="limitAvailable">
                                                 <div class="item">
                                                     <span class="details">Total Limit:</span> 
@@ -139,8 +128,24 @@
                                         </div>
                                     </div>
                                     <!-- Apply Loan -->
-                                    <div id="apply_flow" style="display: none"> 
-                                        <h2>Apply</h2>
+                                    <div id="apply_flow" style="display: none">
+                                        <div align="center" class="apply-loan">
+                                            <h3>You have not applied for loan through INDIFI</h3>
+                                            <h2>Need Working Capital For Making Payments?</h2>
+                                            <h4>Apply to get the hassel free loans.</h4>
+                                            <div><img src="https://s3-ap-southeast-1.amazonaws.com/static-indifi/images/apply-loan-widget-graphic.png" style="height: 214px;"></div>
+                                        </div> 
+                                        <button> 
+                                            <div class="primaryButton primaryButton payment-option payment-options item grid clear">
+                                                <label>
+                                                    <div class="buttonText">Apply Now!</div> 
+                                                    <div class="spin" style="display: none;">
+                                                        <div></div>
+                                                    </div>
+                                                </label>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

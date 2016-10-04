@@ -91,18 +91,18 @@
   		}
   	}
   	function showServerError(errorObjOrString){
-  		jQuery('.success-message-section').html('');
-  		jQuery('.error-section').html('');
+  		jQuery('.success-message-section').html('').hide();
+  		jQuery('.error-section').html('').hide();
   		if (errorObjOrString.message){
-  			jQuery('.error-section').html(errorObjOrString.message);
+  			jQuery('.error-section').html(errorObjOrString.message).show();
   		} else {
-  			jQuery('.error-section').html(errorObjOrString);
+  			jQuery('.error-section').html(errorObjOrString).show();
   		}
   	}
   	function showSuccessMessage(msg){
-  		jQuery('.success-message-section').html('');
-  		jQuery('.error-section').html('');
-  		jQuery('.success-message-section').html(msg);
+  		jQuery('.success-message-section').html('').hide();
+  		jQuery('.error-section').html('').hide();
+  		jQuery('.success-message-section').html(msg).show();
   	}
   	function getCreditLine(){
   		var merchant_id = getParameterByName('merchant_id');
@@ -146,7 +146,7 @@
 		var amount = jQuery('.payment-amount-input').val();
 		jQuery('.payment-amount-input-error').html("");
 		if(!amount.trim()){
-			jQuery('.payment-amount-input-error').html("Enter amount");
+			jQuery('.payment-amount-input-error').html("Enter Amount To Proceed");
 			return;
 		} else if(!validateAmount(amount.trim())){
 			jQuery('.payment-amount-input-error').html("Invalid amount");
@@ -154,6 +154,7 @@
 		}
 		var merchant_id = getParameterByName('merchant_id');
 		var partner_id = getParameterByName('partner_id');
+		jQuery('.capture-payment-amount-section-button').find('.buttonText').hide();
 		
 		jQuery('.capture-payment-amount-section-button').attr('disabled','disabled').find('.spin').show();
 		jQuery.ajax({
@@ -167,6 +168,8 @@
 				'merchant_id': merchant_id
 			}),
 			success: function(result) {
+				jQuery('.capture-payment-amount-section-button').find('.buttonText').show();
+		
 				jQuery('.capture-payment-amount-section-button').removeAttr('disabled').find('.spin').hide();
 				if(result.success && result.data && result.data.id) {
 					payment_request_id = result.data.id;
@@ -177,6 +180,7 @@
 				}
 			}, 
 			error: function(xhr, status, error) {
+				jQuery('.capture-payment-amount-section-button').find('.buttonText').show();
 				jQuery('.capture-payment-amount-section-button').removeAttr('disabled').find('.spin').hide();
 				showServerError(xhr.responseJSON);
 			}
@@ -185,6 +189,7 @@
   	function authorizePayment(){
 		var otp = jQuery('.payment-otp-input').val();
 		jQuery('.capture-payment-otp-section-button').attr('disabled','disabled').find('.spin').show();
+		jQuery('.capture-payment-otp-section-button').find('.buttonText').hide();
 		jQuery.ajax({
 			url: server_domain + '/payments/'+payment_request_id+'/authorize', 
 			contentType: "application/json; charset=utf-8",
@@ -195,6 +200,7 @@
 			}),
 			success: function(result) {
 				jQuery('.capture-payment-otp-section-button').removeAttr('disabled').find('.spin').hide();
+				jQuery('.capture-payment-otp-section-button').find('.buttonText').show();
 				if(result.success) {
 					var redirect_url = getParameterByName('redirect_url');
   					if(redirect_url){
@@ -211,6 +217,7 @@
 				}
 			}, 
 			error: function(xhr, status, error) {
+				jQuery('.capture-payment-otp-section-button').find('.buttonText').show();
 				jQuery('.capture-payment-otp-section-button').removeAttr('disabled').find('.spin').hide();
 				showServerError(xhr.responseJSON);
 			}
