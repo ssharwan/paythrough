@@ -433,7 +433,7 @@ a {
     outline: 0;
     color: inherit;
     cursor: pointer;
-    color:#31BA74;
+    color:#46B1FF;
 }
 i {
     font-style: normal;
@@ -441,8 +441,8 @@ i {
 }
 .spin {
     display: none;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     margin: 0 auto
 }
 .backdrop,
@@ -459,7 +459,7 @@ i {
     vertical-align: middle;
     display: inline-block;
     border-radius: 50%;
-    border: 4px solid #29b7d6;
+    border: 4px solid #46B1FF;
     -webkit-animation: spin 1.3s linear infinite;
     animation: spin 1.3s linear infinite;
     box-sizing: border-box;
@@ -620,7 +620,9 @@ i {
 .merchant-name {
     text-overflow: ellipsis;
     overflow: hidden;
-    font-size: 15px
+    font-size: 15px;
+    text-align:center;
+    padding: 8px 20px 0;
 }
 .merchant-desc {
     white-space: pre;
@@ -634,7 +636,7 @@ i {
     }
 .body {
     border-radius: 0 0 3px 3px;
-    height: 290px;
+    height: 365px;
     backface-visibility: none;
 }
 .body.emi-focus {
@@ -748,7 +750,7 @@ i {
 .payment-options label:hover{
     -webkit-transition: .2s;
     transition: .2s;
-    background: #34DEC0;
+    background: #2499ef;
 }
 .payment-options i {
     display: block;
@@ -847,7 +849,7 @@ i {
     width: 100%;
     left:0;
 }
-.error-section{
+.errorMsg{
     color: #ff0000;
     text-align: center;
     font-size: 12px;
@@ -859,10 +861,15 @@ i {
 
 }
 .capture-payment-success{
-    margin-top: 40px;
-    color: #31ba74;
+    background: #31ba74;
     text-align: center;
     font-size: 15px;
+    color: #fff;
+    width: 68%;
+    margin: 40px auto 0;
+    padding: 10px;
+    border-radius: 3px;
+    line-height: 22px;
 }
 .brandName{
     font-size: 16px;

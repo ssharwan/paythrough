@@ -26,12 +26,10 @@
                         <div class="body">
                             <div class="form">
                                 <div class="form-fields">
+                                    <!-- Payment Flow -->
                                     <div class="form-commonshowable screen nasty">
+                                        <div class="merchant-name"></div>
                                         <div class="limitAvailable">
-                                            <div class="item">
-                                                <div class="details">Merchant Name:</div> 
-                                                <div class="merchant-name value"></div>
-                                            </div>
                                             <div class="item">
                                                 <span class="details">Total Limit:</span> 
                                                 <span class="value">&#8377; 
@@ -46,17 +44,17 @@
                                             </div>
                                         </div>
 
-                                        <section class="error-section" style="color:red"> </section>
-                                        <section class="success-message-section" style="color:green"> </section>
+                                        <section class="error-section errorMsg"> </section>
+                                        <section class="success-message-section"> </section>
 
                                         <!-- Amount Section -->
-                                        <div class="pad capture-payment-amount" style="margin-top: 20px; display: none;">
+                                        <div class="pad capture-payment-amount" style="display: none;">
                                             <div class="elem-wrap">
                                                 <div class="elem elem-contact filled">
                                                     <i>&#8377;</i> 
                                                     <label>Amount To Be Paid</label> <input type="text" class="payment-amount-input input"> 
                                                 </div>
-                                                <div class="payment-amount-input-error error-section"></div>
+                                                <div class="payment-amount-input-error errorMsg"></div>
                                             </div>
                                             <div class="primaryButton">
                                                 <div class="grid clear payment-options">
@@ -66,14 +64,19 @@
                                             </div>
                                         </div>
                                         <!-- OTP Section -->
-                                        <div class="pad capture-payment-otp" style="margin-top: 40px; display: none;">
+                                        <div class="pad capture-payment-otp" style="display: none;">
                                             <div class="elem-wrap">
                                                 <div class="elem elem-contact filled">
                                                     <i style="font-size: 11px;">OTP</i> 
                                                     <div class="help">Please enter a valid OTP number</div>
                                                     <label>Enter OTP</label> <input type="text" class="payment-otp-input input"> 
                                                 </div>
-                                                <div class="resendOTP"><a href="#" class="resend-otp-button">Resend OTP</a></div>
+                                                <div class="resendOTP">
+                                                <div class="spin" style="display: block;">
+                                                        <div></div>
+                                                    </div>
+                                                    <a href="#" class="resend-otp-button">Resend OTP</a>
+                                                </div>
                                             </div>
                                             <div class="primaryButton">
                                                 <div class="grid clear payment-options">
@@ -83,7 +86,7 @@
                                             </div>
                                         </div>
                                         <!-- Sucess Section -->
-                                        <div class="pad capture-payment-success" style="margin-top: 40px; display: none;">
+                                        <div class="pad capture-payment-success" style="display: none;">
                                             
                                         </div>
                                     </div>
