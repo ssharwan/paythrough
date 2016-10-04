@@ -18,7 +18,6 @@
 			success: function(data) {
 				if(data.data.token) {
 				  indifi_token = data.data.token;
-				  attachEvents();
 				  getCreditLine();
 				} else {
 					showServerError("Request failed. Please try again later.")
@@ -28,6 +27,9 @@
 				showServerError("Request failed. Please try again later.")
 			}
 		})
+		jQuery('.pay-through-indifi-close').on('click', function(){
+  			exit();
+  		});
   	}
   	function attachEvents(){
   		jQuery('.capture-payment-amount-section-button').on('click', function(){
@@ -38,11 +40,7 @@
   		})
   		jQuery('.resend-otp-button').on('click', function(){
   			resendOTP();
-  		})
-  		jQuery('.pay-through-indifi-close').on('click', function(){
-  			exit();
-  		})
-  		
+  		})		
   	}
   	function exit(){
   		window.parent.postMessage( {'close_widget': true}, '*' );
@@ -52,7 +50,18 @@
   		} else {
 	  		window.close();
 	  	}
-
+  	}
+  	function showHidePaymentOrApplySection(section){
+  		jQuery('#payment_flow').hide();
+  		jQuery('#apply_flow').hide();
+  		switch(section){
+  			case 'payment':
+	  			jQuery('#payment_flow').show();
+	  			break;
+	  		case 'apply':
+	  			jQuery('#apply_flow').show();
+	  			break;
+  		}
   	}
   	function showStep(step, msg){
 
@@ -77,7 +86,7 @@
   				capture_payment_amount_section.hide();
   				capture_payment_otp_section.hide();
   				capture_payment_success_section.show();
-  				capture_payment_success_section.html(msg);
+  				capture_payment_success_section.find('.success-message').html(msg)
   				break;
   		}
   	}
@@ -104,18 +113,27 @@
 			headers: { 'Authorization' : 'Bearer ' + indifi_token },
 			type:  'GET',
 			success: function(result) {
-				if(result.success && result.data && result.data.loan_id) {
+				if(result.success && result.data && result.data.application_request_id) {
 					credit_line = result.data;
-					jQuery('.merchant-name').html(credit_line.borrower_name);
-					jQuery('.total-credit').html(numeral(credit_line.loan_amount).format('0,0.00'));
-					jQuery('.remaining-credit').html(numeral(credit_line.credit_left).format('0,0.00'));
-					
-					showStep('capture_amount');
+					if(credit_line.loan_id){
+						showHidePaymentOrApplySection('payment');
+						jQuery('.merchant-name').html(credit_line.borrower_name);
+						jQuery('.total-credit').html(numeral(credit_line.loan_amount).format('0,0.00'));
+						jQuery('.remaining-credit').html(numeral(credit_line.credit_left).format('0,0.00'));
+				  		attachEvents();
+						showStep('capture_amount');
+					} else {
+						showServerError("Application is not ready for disbursal.")
+					}
 				} else {
-					showServerError("Request failed to load credit line details. Please try again later.")
+					showHidePaymentOrApplySection('apply');
 				}
 			}, 
 			error: function(xhr, status, error) {
+				if(xhr.responseJSON.data && xhr.responseJSON.data.name === "InvalidMerchant"){
+					showHidePaymentOrApplySection('apply');
+					return;
+				}
 				showServerError(xhr.responseJSON);
 			}
 		})
@@ -149,6 +167,7 @@
 			success: function(result) {
 				if(result.success && result.data && result.data.id) {
 					payment_request_id = result.data.id;
+					jQuery('.requested-amount').html(amount);
 					showStep('capture_otp')
 				} else {
 					showServerError("Request failed. Please try again later.")
@@ -178,7 +197,8 @@
   					}
 					var org_credit_left = numeral(credit_line.credit_left).value();
 					credit_line.credit_left = org_credit_left - numeral(result.data[0].amount).value();
-					jQuery('.remaining-credit').html(numeral(credit_line.credit_left).format('0,0.00'));
+					jQuery('.capture-payment-success').find('.total-credit').html(numeral(credit_line.loan_amount).format('0,0.00'));
+					jQuery('.capture-payment-success').find('.remaining-credit').html(numeral(credit_line.credit_left).format('0,0.00'));
 					showStep('success_screen', "Payment request has been initiated successfully.")
 				} else {
 					showServerError("Request failed. Please try again later.")
