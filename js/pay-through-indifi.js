@@ -154,6 +154,8 @@
 		}
 		var merchant_id = getParameterByName('merchant_id');
 		var partner_id = getParameterByName('partner_id');
+		
+		jQuery('.capture-payment-amount-section-button').attr('disabled','disabled').find('.spin').show();
 		jQuery.ajax({
 			url: server_domain + '/payments', 
 			contentType: "application/json; charset=utf-8",
@@ -165,6 +167,7 @@
 				'merchant_id': merchant_id
 			}),
 			success: function(result) {
+				jQuery('.capture-payment-amount-section-button').removeAttr('disabled').find('.spin').hide();
 				if(result.success && result.data && result.data.id) {
 					payment_request_id = result.data.id;
 					jQuery('.requested-amount').html(amount);
@@ -174,12 +177,14 @@
 				}
 			}, 
 			error: function(xhr, status, error) {
+				jQuery('.capture-payment-amount-section-button').removeAttr('disabled').find('.spin').hide();
 				showServerError(xhr.responseJSON);
 			}
 		})
   	}
   	function authorizePayment(){
 		var otp = jQuery('.payment-otp-input').val();
+		jQuery('.capture-payment-otp-section-button').attr('disabled','disabled').find('.spin').show();
 		jQuery.ajax({
 			url: server_domain + '/payments/'+payment_request_id+'/authorize', 
 			contentType: "application/json; charset=utf-8",
@@ -189,6 +194,7 @@
 				'otp': otp
 			}),
 			success: function(result) {
+				jQuery('.capture-payment-otp-section-button').removeAttr('disabled').find('.spin').hide();
 				if(result.success) {
 					var redirect_url = getParameterByName('redirect_url');
   					if(redirect_url){
@@ -205,17 +211,20 @@
 				}
 			}, 
 			error: function(xhr, status, error) {
+				jQuery('.capture-payment-otp-section-button').removeAttr('disabled').find('.spin').hide();
 				showServerError(xhr.responseJSON);
 			}
 		})
   	}
   	function resendOTP(){
+  		jQuery('.resend-otp-button').attr('disabled','disabled').find('.spin').show();
   		jQuery.ajax({
 			url: server_domain + '/payments/'+payment_request_id+'/resend_otp', 
 			contentType: "application/json; charset=utf-8",
 			headers: { 'Authorization' : 'Bearer ' + indifi_token },
 			type:  'POST',
 			success: function(result) {
+				jQuery('.resend-otp-button').removeAttr('disabled').find('.spin').hide();
 				if(result.success) {
 					showSuccessMessage("OTP sent successfully.")
 				} else {
@@ -223,6 +232,7 @@
 				}
 			}, 
 			error: function(xhr, status, error) {
+				jQuery('.resend-otp-button').removeAttr('disabled').find('.spin').hide();
 				showServerError(xhr.responseJSON);
 			}
 		})

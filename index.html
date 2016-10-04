@@ -59,12 +59,22 @@
                                                 </div>
                                                 <div class="payment-amount-input-error errorMsg"></div>
                                             </div>
-                                            <div class="primaryButton">
-                                                <div class="grid clear payment-options">
-                                                    <div class="payment-option item capture-payment-amount-section-button" tab="card"><label>Next</label></div>
+                                            <button class="capture-payment-amount-section-button"> 
+                                                <div class="primaryButton">
+                                                    <div class="grid clear payment-options">
+                                                        <div class="payment-option item" tab="card">
+                                                            <label>
+                                                                Next 
+                                                                <div class="spin" style="display: none;">
+                                                                    <div></div>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
                                                 </div>
-                                                <div class="clear"></div>
-                                            </div>
+                                            </button>
+                                            
                                         </div>
                                         <!-- OTP Section -->
                                         <div class="pad capture-payment-otp" style="display: none;">
@@ -82,19 +92,30 @@
                                                     <div class="help">Please enter a valid OTP number</div>
                                                     <label>Enter OTP</label> <input type="text" class="payment-otp-input input"> 
                                                 </div>
-                                                <div class="resendOTP">
-                                                <div class="spin" style="display: block;">
-                                                        <div></div>
+                                                <button class="resend-otp-button">
+                                                    <div class="resendOTP">
+                                                        <a href="#">Resend OTP</a>
+                                                        <div class="spin" style="display: none;">
+                                                            <div></div>
+                                                        </div>
                                                     </div>
-                                                    <a href="#" class="resend-otp-button">Resend OTP</a>
-                                                </div>
+                                                </button>
                                             </div>
-                                            <div class="primaryButton">
-                                                <div class="grid clear payment-options">
-                                                    <div class="payment-option item capture-payment-otp-section-button" tab="card"><label>Next</label></div>
+                                            <button class="capture-payment-otp-section-button"> 
+                                                <div class="primaryButton">
+                                                    <div class="grid clear payment-options">
+                                                        <div class="payment-option item" tab="card">
+                                                            <label>
+                                                                Next 
+                                                                <div class="spin" style="display: none;">
+                                                                    <div></div>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clear"></div>
                                                 </div>
-                                                <div class="clear"></div>
-                                            </div>
+                                            </button>
                                         </div>
                                         <!-- Sucess Section -->
                                         <div class="capture-payment-success" style="display: none;">
