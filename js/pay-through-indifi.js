@@ -96,10 +96,10 @@
   		jQuery('.success-message-section').html(msg);
   	}
   	function getCreditLine(){
-  		var agent_id = getParameterByName('agent_id');
-		var anchor_id = getParameterByName('anchor_id');
+  		var merchant_id = getParameterByName('merchant_id');
+		var partner_id = getParameterByName('partner_id');
   		jQuery.ajax({
-			url: server_domain + '/creditlines/'+anchor_id+'/'+agent_id, 
+			url: server_domain + '/creditlines/'+partner_id+'/'+merchant_id, 
 			contentType: "application/json; charset=utf-8",
 			headers: { 'Authorization' : 'Bearer ' + indifi_token },
 			type:  'GET',
@@ -134,8 +134,8 @@
 			jQuery('.payment-amount-input-error').html("Invalid amount");
 			return;
 		}
-		var agent_id = getParameterByName('agent_id');
-		var anchor_id = getParameterByName('anchor_id');
+		var merchant_id = getParameterByName('merchant_id');
+		var partner_id = getParameterByName('partner_id');
 		jQuery.ajax({
 			url: server_domain + '/payments', 
 			contentType: "application/json; charset=utf-8",
@@ -143,8 +143,8 @@
 			type:  'POST', 
 			data: JSON.stringify({
 				'amount': amount,
-				'anchor_id': anchor_id,
-				'agent_id': agent_id
+				'partner_id': partner_id,
+				'merchant_id': merchant_id
 			}),
 			success: function(result) {
 				if(result.success && result.data && result.data.id) {
