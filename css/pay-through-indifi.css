@@ -425,15 +425,15 @@ html {
     background: #fcfbfa
 }
 .body,
-.header,
-.logo {
+.header
+{
     background: #fff
 }
 a {
     outline: 0;
     color: inherit;
     cursor: pointer;
-    color:#46B1FF;
+    color:#66B360;
 }
 i {
     font-style: normal;
@@ -570,11 +570,11 @@ i {
     color: #fff;
     padding: 10px;
     overflow: hidden;
-    max-height: 128px;
+    height: 46px;
     z-index: 3;
-    background: #48b2ff;
+    background: #283946;
 }
-.header::before {
+/*.header::before {
     left: 0;
     right: 0;
     bottom: 0;
@@ -582,15 +582,15 @@ i {
     background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, .2)), to(rgba(0, 0, 0, .2)));
     background-image: -webkit-linear-gradient(top left, rgba(255, 255, 255, .2), rgba(0, 0, 0, .2));
     background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .2), rgba(0, 0, 0, .2))
-}
+}*/
 .close {
-    right: 4px;
-    top: 10px;
+    right: 8px;
+    top: 22px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     opacity: .6;
     width: 24px;
-    line-height: 26px
+    line-height: 26px;
 }
 .body.emi-focus,
 .form-fields,
@@ -602,12 +602,12 @@ i {
     opacity: 1
 }
 .logo {
-    padding: 4px 8px;
     width: 64px;
+    float: left;
+    background: #fff;
+    padding: 2px 3px;
     border-radius: 3px;
-    margin: auto;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+    margin-top: 12px;
 }
 .logo img {
     vertical-align: middle;
@@ -636,7 +636,8 @@ i {
     }
 .body {
     border-radius: 0 0 3px 3px;
-    height: 365px;
+    height: 345px;
+    padding-top: 20px;
     backface-visibility: none;
 }
 .body.emi-focus {
@@ -742,9 +743,9 @@ i {
     width: 25%
 }
 .payment-options label {
-    padding-top: 8px;
-    height: 46px;
-    background: #46B1FF;
+    padding-top: 6px;
+    height: 42px;
+    background: #66B360;
     color: #fff;
 }
 .payment-options label .buttonText{
@@ -753,7 +754,7 @@ i {
 .payment-options label:hover{
     -webkit-transition: .2s;
     transition: .2s;
-    background: #2499ef;
+    background: #439e3b;
 }
 .payment-options i {
     display: block;
@@ -864,8 +865,8 @@ i {
     font-size: 14px;
     color: #fff;
     width: 68%;
-    margin: 30px auto 0;
-    padding: 10px;
+    margin: auto;
+    padding: 5px 10px;
     border-radius: 3px;
     line-height: 22px;
     text-transform: capitalize;
@@ -876,15 +877,18 @@ i {
     font-size: 14px;
     color: #fff;
     width: 68%;
-    margin: 30px auto 0;
-    padding: 10px;
+    margin: auto;
+    padding: 5px 10px;
     border-radius: 3px;
     line-height: 22px;
     text-transform: capitalize;
 }
 .brandName{
     font-size: 16px;
-    padding: 0px 4px 8px 4px;
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    transform: translate(-50%,-50%);
 }
 .resend-otp-button{
     width:100%;
