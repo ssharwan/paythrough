@@ -853,6 +853,11 @@ i {
     width: 100%;
     left:0;
 }
+.primaryButton a{
+    color:#fff;
+    padding: 6px;
+    display: block;
+}
 .errorMsg{
     color: #ff0000;
     text-align: center;
@@ -901,6 +906,7 @@ i {
     font-weight: 300;
     margin-bottom: 10px;
     font-size: 14px;
+    margin-top: 0;
 }
 .apply-loan h2{
     color: #46b1ff;
@@ -911,5 +917,5 @@ i {
 .apply-loan h4{
     color: #46b1ff;
     font-weight: 300;
-    margin: 0 0 25px 0;
+    margin: 0 0 16px 0;
 }
